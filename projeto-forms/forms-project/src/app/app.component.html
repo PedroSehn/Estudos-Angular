@@ -1,0 +1,36 @@
+<form #form_data="ngForm" (ngSubmit)="onSubmit(form_data)">
+    <div class='form_group'>
+        <label> Nome </label>
+        <input 
+            type="text" 
+            class="text_input"
+            id="nome_input"
+            placeholder="nome"
+            name="nome"
+            ngModel
+        />
+    </div>
+    <div class='form_group'>
+        <label> Email </label>
+        <input 
+            type="email" 
+            class="text_input"
+            id="email_input"
+            placeholder="email"
+            name="email"
+            ngModel
+        />
+    </div>
+    <div class='form_group'>
+        <label> Senha </label>
+        <input 
+            type="password" 
+            class="text_input"
+            id="password_input"
+            placeholder="Senha"
+            name="senha"
+            ngModel
+        />
+    </div>
+    <button type="submit"> Submit </button>
+</form>
