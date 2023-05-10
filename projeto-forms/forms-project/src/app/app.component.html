@@ -32,5 +32,17 @@
             ngModel
         />
     </div>
+    <div class='form_group'>
+        <label> CEP </label>
+        <input 
+            type="text" 
+            class="text_input"
+            id="CEP_input"
+            placeholder="CEP"
+            name="CEP"
+            ngModel
+            (blur)="consultCEP(form_data.value.CEP)"
+        />
+    </div>
     <button type="submit"> Submit </button>
 </form>
