@@ -33,6 +33,26 @@
         />
     </div>
     <div class='form_group'>
+        <label> Rua </label>
+        <input 
+            type="rua" 
+            class="text_input"
+            id="rua_input"
+            placeholder="Rua"
+            name="Rua"
+            ngModel
+        />
+        <div class='form_group'>
+            <label> Bairro </label>
+            <input 
+                type="bairro" 
+                class="text_input"
+                id="bairro_input"
+                placeholder="Bairro"
+                name="Bairro"
+                ngModel
+            />
+    <div class='form_group'>
         <label> CEP </label>
         <input 
             type="text" 
@@ -41,8 +61,7 @@
             placeholder="CEP"
             name="CEP"
             ngModel
-            (blur)="consultCEP(form_data.value.CEP)"
+            (blur)="consultCEP(form_data)"
         />
     </div>
     <button type="submit"> Submit </button>
-</form>

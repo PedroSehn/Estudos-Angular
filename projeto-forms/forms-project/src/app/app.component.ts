@@ -13,12 +13,25 @@ export class AppComponent {
   constructor(private http: HttpClient){}
 
   onSubmit(variable: NgForm) {
-    console.log(variable)
+    console.log(variable.value)
   }
 
-  consultCEP(cep:string){
-    let clean_cep = cep.replace(/\D/g, '')
-    this.http.get<any>(`https://viacep.com.br/ws/${clean_cep}/json/`)
-      .subscribe((data) => console.log(data))
+  consultCEP(form:any){
+    if (form.value.CEP.length > 0) {
+      let clean_cep = form.value.CEP.replace(/\D/g, '')
+      this.http.get<any>(`https://viacep.com.br/ws/${clean_cep}/json/`)
+      .subscribe((data) => this.setValues(form, data))
+    }
+  }
+
+  setValues(form: any, data: any){
+    form.setValue({
+      Bairro: data.bairro,
+      CEP: data.cep,
+      Rua: data.logradouro,
+      email: form.value.email,
+      nome: form.value.nome,
+      senha: form.value.senha,
+  })
   }
 }
