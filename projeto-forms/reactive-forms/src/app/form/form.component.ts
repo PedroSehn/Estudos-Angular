@@ -17,13 +17,27 @@ export class FormComponent {
       email: [null],
     });
   }
-  
 
   show_data(){
     console.log(this.form_data.value)
   }
 
+  auto_fill(){
+    this.form_data.patchValue({
+      email: 'Mahesh@gmail.com', 
+      nome: 'male',
+    })
+  }
+
   clear_form(){
     this.form_data.reset()
+  }
+
+  is_valid(event: any){
+    const element_name: any = event.target.name
+    const errors = this.form_data.controls[`${element_name}`].errors
+    !!errors ? 
+    console.log(`erro no preenchimento de ${element_name}`) : 
+    console.log(`tudo certo`)
   }
 }

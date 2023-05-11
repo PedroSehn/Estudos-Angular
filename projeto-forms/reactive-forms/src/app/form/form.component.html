@@ -3,13 +3,20 @@
         type="text" 
         placeholder="Nome"
         formControlName='nome'
+        name="nome"
+        required
+        (blur)="is_valid($event)"
     />
     <input 
-        type="text" 
+        type="email" 
         placeholder="email"
+        name="email"
         formControlName='email'
+        required
+        (blur)="is_valid($event)"
     />
 
-    <button (click)="show_data()" type="button"> O </button>
+    <button (click)="show_data()" type="button"> Print values </button>
     <button (click)="clear_form()" type="button"> Clear </button>
+    <button (click)="auto_fill()" type="button"> Fill </button>
 </form>
