@@ -1,0 +1,15 @@
+<form [formGroup]="form_data">
+    <input 
+        type="text" 
+        placeholder="Nome"
+        formControlName='nome'
+    />
+    <input 
+        type="text" 
+        placeholder="email"
+        formControlName='email'
+    />
+
+    <button (click)="show_data()" type="button"> O </button>
+    <button (click)="clear_form()" type="button"> Clear </button>
+</form>
